@@ -1,0 +1,23 @@
+@import "../prettify/tomorrow-night.min";
+
+// Variables
+@import "../variables";
+
+// Bootstrap
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
+@import "../common";
+
+@import "../font-awesome";
+
+//Fira Code
+@font-face{
+  font-family: 'Fira Code';
+  src: url('/fonts/FiraCode/eot/FiraCode-Medium.eot');
+  src: url('/fonts/FiraCode/eot/FiraCode-Medium.eot') format('embedded-opentype'),
+  url('/fonts/FiraCode/woff2/FiraCode-Medium.woff2') format('woff2'),
+  url('/fonts/FiraCode/woff/FiraCode-Medium.woff') format('woff'),
+  url('/fonts/FiraCode/ttf/FiraCode-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}

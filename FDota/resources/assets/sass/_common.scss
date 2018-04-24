@@ -1,0 +1,222 @@
+a[target="_blank"] {
+  cursor: alias;
+}
+
+*, :active, :focus, a, a:active, a:focus {
+  outline: 0;
+  outline-style: none;
+  outline-width: 0;
+}
+
+@media (max-width: 768px) {
+  body {
+    background: #f9f9fb;
+  }
+}
+
+// 过渡效果
+.fade-enter-active, .fade-leave-active {
+  transition: all .5s cubic-bezier(.39,.575,.565,1);
+}
+.fade-enter, .fade-leave-active {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+// navbar
+.navbar-collapse.active {
+  transform: translateZ(0);
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    min-height: auto;
+  }
+
+  .navbar-toggle {
+    margin: 0;
+    padding: 20px;
+    .icon-bar {
+      position: absolute;
+      top: 50%;
+      left: 25%;
+      height: 2px;
+      width: 20px;
+      border-radius: 1px;
+      opacity: .7;
+      transform-origin: 50% 50%;
+      transition-property: all;
+      transition-duration: .2s;
+      transition-timing-function: cubic-bezier(.175,.885,.32,1.275);
+    }
+    .icon-bar.top {
+      transform: rotate(0deg) translate3d(0,-6px,0);
+    }
+    .icon-bar.patty {
+      transition-duration: .1s;
+    }
+    .icon-bar.bottom {
+      transform: rotate(0deg) translate3d(0,6px,0);
+    }
+    .icon-bar + .icon-bar {
+      margin-top: 0;
+    }
+  }
+
+  .navbar-toggle.active {
+    .icon-bar.bottom {
+      opacity: 1;
+      transform: rotate(-45deg);
+    }
+    .icon-bar.top {
+      opacity: 1;
+      transform: rotate(45deg);
+    }
+    .icon-bar.patty {
+      opacity: 0;
+    }
+  }
+
+  .navbar-default {
+    padding: 0;
+  }
+
+  .navbar-header {
+    height: 44px;
+    overflow: hidden;
+    background: #323436;
+    border-bottom: 1px solid hsla(0,0%,100%,.1);
+  }
+
+  .navbar-collapse {
+    position: absolute;
+    background: #323436;
+    width: calc(100% - 40px);
+    right: 0;
+    box-shadow: none;
+    transition-property: transform;
+    transition-duration: .3s;
+    transition-timing-function: cubic-bezier(.55,.055,.675,.19);
+    transform: translate3d(100%,0,0);
+  }
+}
+
+// article
+article {
+  padding-bottom: 20px;
+  main {
+    color: #475669;
+    overflow: hidden;
+    line-height: 2;
+    word-wrap: break-word;
+    hr {
+      max-width: 20%;
+      margin-top: 0;
+      margin-bottom: 15px;
+      border-top: 1px solid #e7e7e7;
+    }
+    a {
+      color: #42b983;
+      word-break: break-all;
+    }
+    a:hover {
+      outline: 0;
+    }
+    h1, h2 {
+      padding-bottom: .3em;
+    }
+    h1 {
+      font-size: 2em;
+      line-height: 1;
+    }
+    h2 {
+      font-size: 1.75em;
+      line-height: 1.225;
+    }
+    h3 {
+      font-size: 1.5em;
+      line-height: 1.43;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      position: relative;
+      margin-top: 1em;
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+    blockquote, dl, ol, p, pre, table, ul {
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+    blockquote {
+      border-color: #D6DBDF;
+      background: none repeat scroll 0 0 rgba(102,128,153,.05);
+      font-size: 1.4rem;
+      line-height: 2rem;
+      padding: 10px 15px;
+      border-left-style: solid;
+      border-left-width: 10px;
+    }
+
+    /*prettyprint*/
+    code {
+      background-color: transparent;
+    }
+
+    code:hover {
+      background-color: transparent;
+    }
+
+    .linenums code:hover {
+      background-color: #5b5a4e;
+    }
+
+    li.L0, li.L1, li.L2, li.L3,
+    li.L4, li.L5, li.L6, li.L7,
+    li.L8, li.L9 {
+      width: max-content;
+      background-color: #272822;
+      list-style-type: decimal !important;
+      padding-left: 6px;
+    }
+
+    pre.prettyprint {
+      font-size: 1.4rem;
+      line-height: 20px;
+      padding: 9.5px;
+      color: rgb(151, 157, 180);
+      background-color: #272822;
+      border-color: rgb(223, 226, 241);
+      border-image: initial;
+      white-space: nowrap;
+    }
+
+    ol.linenums {
+      margin-left: -8px;
+      color: #272822;
+    }
+
+    .prettyprint.linenums, pre.prettyprint.linenums {
+      -webkit-box-shadow: inset 40px 0 0 #39382e,inset 41px 0 0 #464741,0 5px 10px rgba(0,0,0,.2);
+      -moz-box-shadow: inset 40px 0 0 #39382e,inset 41px 0 0 #464741,0 5px 10px rgba(0,0,0,.2);
+      box-shadow: inset 40px 0 0 #39382e,inset 41px 0 0 #464741,0 5px 10px rgba(0,0,0,.2);
+    }
+
+    .prettyprint.linenums ol li, pre.prettyprint.linenums ol li {
+      color: #bebec5;
+    }
+    @media (max-width: 700px) {
+      pre.prettyprint {
+        font-size: 1rem;
+        line-height: 1.6;
+      }
+
+      .prettyprint.linenums, pre.prettyprint.linenums {
+        box-shadow: none;
+      }
+
+      ol.linenums {
+        padding-left: 0;
+      }
+    }
+  }
+}
